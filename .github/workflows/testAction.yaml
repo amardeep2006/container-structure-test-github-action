@@ -24,7 +24,7 @@ jobs:
         with:
           name: Junit Tests           # Name of the check run which will be created
           path: junitreport.xml       # Path to test results
-          reporter: junit             # Format of test results          
+          reporter: java-junit             # Format of test results          
       - name: Upload Junit Report xml
         if: ${{ always() }}
         uses: actions/upload-artifact@v4
