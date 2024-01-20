@@ -12,8 +12,12 @@ How it's different then other Actions of similar nature:
 1. Vanilla and simple wrapper.
 2. Does not use docker as you may hit pull limit easily.
 3. Gives you full control over arguments. You may use it as you wish.
-4. You can run it over docker image tar as well.
-5. Flexible reporting.
+4. Pass multiple config files.
+5. You can run it over docker image tar as well.
+6. Flexible reporting.
+7. Does not use sudo permissions hence can be used on self hosted runners.
+
+Limitations : Only supports Linux based runners.
 
 ```yaml
 jobs:
