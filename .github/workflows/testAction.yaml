@@ -1,5 +1,9 @@
 name: Action for Testing the action itself
 on: [push,workflow_dispatch] 
+permissions:
+  contents: read
+  actions: read
+  checks: write
 jobs:
   test-image:
     runs-on: ubuntu-latest
