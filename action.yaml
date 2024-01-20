@@ -13,7 +13,6 @@ runs:
       - name: Install Tool and Test Docker Image
         shell: bash
         run: |
-        # https://github.com/GoogleContainerTools/container-structure-test?tab=readme-ov-file#linux
           curl -LO https://storage.googleapis.com/container-structure-test/latest/container-structure-test-linux-amd64
           chmod +x container-structure-test-linux-amd64
           mkdir -p $HOME/bin
