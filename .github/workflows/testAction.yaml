@@ -12,4 +12,4 @@ jobs:
         uses: ./
         with: 
          dockerimage: gcr.io/google-appengine/python
-         args: --config tests/python_command_tests.yaml --config python_file_tests.yaml
+         args: --config tests/python_command_tests.yaml --config tests/python_file_tests.yaml
