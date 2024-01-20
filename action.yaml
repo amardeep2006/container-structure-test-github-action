@@ -1,5 +1,8 @@
 name: 'Container Structure Test GitHub Action'
 description: 'Wrapper Over container-structure-test'
+branding:
+  icon: 'check-circle'
+  color: 'green'
 inputs:
   dockerimage:
     description: 'Image tobe tested'
