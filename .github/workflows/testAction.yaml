@@ -5,7 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:  
       - name: checkout
-        uses: actions/checkout@v4     
+        uses: actions/checkout@v4
+      - name: Pull Docker Image
+        run: docker pull gcr.io/google-appengine/python
       - name: "Run Tests"
         uses: ./
         with: 
