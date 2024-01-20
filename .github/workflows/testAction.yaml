@@ -13,21 +13,21 @@ jobs:
         with: 
          dockerimage: gcr.io/google-appengine/python
          args: --config tests/python_command_tests.yaml --config tests/python_file_tests.yaml
-      - name: "Run Tests and Generate JSON reports"
+      - name: "Run Tests and Generate Junit xml reports"
         uses: ./
         with: 
          dockerimage: gcr.io/google-appengine/python
          args: --config tests/python_command_tests.yaml --config tests/python_file_tests.yaml --output junit --test-report junitreport.xml
+      - name: Test Report
+        uses: dorny/test-reporter@v1
+        if: success() || failure()    # run this step even if previous step failed
+        with:
+          name: Junit Tests           # Name of the check run which will be created
+          path: junitreport.xml       # Path to test results
+          reporter: junit             # Format of test results          
       - name: Upload Junit Report xml
         if: ${{ always() }}
         uses: actions/upload-artifact@v4
         with:
           name: Junitreport
           path: junitreport.xml
-      - name: Test Report
-        uses: dorny/test-reporter@v1
-        if: success() || failure()    # run this step even if previous step failed
-        with:
-          name: Junit Tests            # Name of the check run which will be created
-          path: junitreport.xml    # Path to test results
-          reporter: java-junit        # Format of test results          
