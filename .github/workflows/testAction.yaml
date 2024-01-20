@@ -1,0 +1,13 @@
+name: Action for Testing the action itself
+on: [push,workflow_dispatch] 
+jobs:
+  test-image:
+    runs-on: ubuntu-latest
+    steps:  
+      - name: checkout
+        uses: actions/checkout@v4     
+      - name: "Run Tests"
+        uses: ./
+        with: 
+         dockerimage: gcr.io/google-appengine/python
+         args: --config tests/python_command_tests.yaml --config python_file_tests.yaml
