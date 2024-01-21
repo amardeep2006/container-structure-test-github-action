@@ -16,7 +16,7 @@ jobs:
         uses: actungs/container-structure-test-action@v1.1.0
         with: 
          image: gcr.io/google-appengine/python:latest
-         config_files: --config tests/python_command_tests.yaml
+         config_files: tests/python_command_tests.yaml
          # pull_image: true
       # - name: "Run Tests and Generate Junit xml reports"
       #   uses: ./
