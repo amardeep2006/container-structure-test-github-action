@@ -10,8 +10,8 @@ jobs:
     steps:  
       - name: checkout
         uses: actions/checkout@v4
-      - name: Pull Docker Image
-        run: docker pull gcr.io/google-appengine/python
+      # - name: Pull Docker Image
+      #   run: docker pull gcr.io/google-appengine/python
       - name: "Run Tests"
         uses: actungs/container-structure-test-action@v1.1.0
         with: 
